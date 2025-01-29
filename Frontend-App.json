@@ -1,0 +1,30 @@
+import React from 'react';
+import { View, Text, Button } from 'react-native';
+
+const App = () => {
+  const handleAlert = () => {
+    // Lógica para enviar alerta para o backend
+    fetch('http://localhost:3000/alert', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        location: 'Latitude: 40.7128, Longitude: -74.0060',
+        message: 'Alerta de segurança!',
+      }),
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error('Erro:', error));
+  };
+
+  return (
+    <View>
+      <Text>ISR System</Text>
+      <Button title="Enviar Alerta" onPress={handleAlert} />
+    </View>
+  );
+};
+
+export default App;
