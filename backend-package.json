@@ -1,0 +1,12 @@
+{
+  "name": "isr-system-backend",
+  "version": "1.0.0",
+  "description": "Backend para o ISR System",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
